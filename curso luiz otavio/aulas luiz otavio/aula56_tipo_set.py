@@ -10,11 +10,15 @@
 # s1 = set('Luiz')
 
 s1 = set()  # vazio
-s1 = {'Luiz', 1, 2, 3}  # com dados
+s1.add('Jonathas')
+s1.add(1)
+s1.update(('Olá mundo', 1, 2, 3, 4))
+s1.discard('Olá mundo')
+print(s1)
 
 # Sets são eficientes para remover valores duplicados
 # de iteráveis.
-# - Não aceitam valores mutáveis;
+# - Não aceitam valores mutáveis; [lista, set, etc]
 # - Seus valores serão sempre únicos;
 # - não tem índexes;
 # - não garantem ordem;
