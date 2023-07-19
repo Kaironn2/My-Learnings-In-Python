@@ -2,15 +2,16 @@ from random import randint
 from time import sleep
 import os
 
-palavra_secreta = ['RENGAR', 'FADE', 'SAADHAK', 'SASUKE', 'FRAJOLA', 'CRUNCHYROLL', 'GOIABA', 'RAIDEN', 'Stranger Things']
+palavra_secreta = ['RENGAR', 'FADE', 'SAADHAK', 'SASUKE', 'FRAJOLA', 'CRUNCHYROLL', 'GOIABA', 'RAIDEN', 'STRANGER THINGS', 
+                   'DARK STORM SLAYER', 'CAMMY']
 dica_palavra_secreta = ['Campeão do lol', 'Agente do Valorant', 'Proplayer de Valorant', 'Personagem de Naruto',
                         'Personagem de Looney Tunes', 'Serviço de Streaming', 'FRUTA', 
-                        'Personagem de Mortal Kombat', 'Série da Netflix']
+                        'Personagem de Mortal Kombat', 'Série da Netflix', 'Melhor Jogador de Rengar', 'Personagem de Street Fighter']
 
 letras_acertadas = ''
 letras_usadas = ''
 pontos = 0
-tentativas = 12
+tentativas = 15
 validar_reset = 0
 randomizer = 0
 quantidade_de_palavras = len(palavra_secreta) - 1
