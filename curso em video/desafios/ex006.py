@@ -7,6 +7,8 @@ lista_mais_recente = []
 numeral = 1
 contador = 0
 verificador = 0
+soma = 0
+encerrar = ''
 
 def multiplos(numero):
 
@@ -53,14 +55,15 @@ while True:
             print('Valor inválido. Por favor, digite um número inteiro.')
             continue
         
+        if numero_usuario in lista_numeros_usuario:
+            os.system('cls')
+            print(f'O número {numero_usuario} já foi adicionado, digite outro número.')
+            continue
+
         multiplos(numero_usuario)
         os.system('cls')
         break
 
-    
-    print(f'lista_numeros_multiplicados = {lista_numeros_multiplicados}\n'
-          f'lista_mais_recente = {lista_mais_recente}'
-          f'lista_numeros_usuario = {lista_numeros_usuario}')
 
 
     while True:
@@ -72,14 +75,14 @@ while True:
                     '1 - Mostrar o número mais recente e seus mútiplos\n'      
                     '2 - Ver a lista inteira\n'      
                     '3 - Adicionar mais um número\n'
-                    '4 - Ver o maior número das listas\n'
-                    '5 - Ver a lista com a maior soma\n'
+                    '4 - Ver o maior múltiplo das listas\n'
+                    '5 - Ver a soma da lista com os maiores números\n'
                     '6 - Encerrar o programa\n' 
                     )
 
                     opcao = input('Digite a opção desejada: ')
 
-                    if opcao[0] in '12345':
+                    if opcao[0] in '123456':
                         break
 
                     os.system('cls')
@@ -89,6 +92,7 @@ while True:
             match opcao:
 
                 case '1':
+                    os.system('cls')
                     print(f'O último número digitado foi {numero_mais_recente}\n'
                         f'E seus mútiplos são: ', end='')
 
@@ -101,48 +105,80 @@ while True:
                         if contador != verificador:
                             print(n, end='-')
                         else:
-                            print(n)
+                            print(f'{n}\n')
 
                         contador += 1
 
 
                     contadores(1)
+                    
 
 
                 case '2':
 
                     os.system('cls')
 
-                    for item in lista_numeros_usuario:
+                    
+                    for lista in lista_numeros_multiplicados:
 
-                        print(f'{numeral}° número: {item}\n'
-                            f'Múltiplos: ', end='')
-                        numeral += 1
+                        contadores
 
-                        for lista in lista_numeros_multiplicados:
+                        print(f'{numeral}° numero: {lista_numeros_usuario[contador]}\n'
+                              f'Múltiplos {lista}\n')
 
-                            for number in lista:
-                                verificador = len(lista) - 1
+                        contador += 1 
 
-                                if contador != verificador:
-                                    print(number, end='-')
-                                else:
-                                    print(number)
 
-                    contadores(1)
+
 
                 case '3':
 
+                    os.system('cls')
                     break
                 
+
+
                 case '4':
 
-                    for numeros in lista_numeros_multiplicados:
+                    os.system('cls')
 
-                        maior_numero = 0
+                    for lista in lista_numeros_multiplicados:
+                        
+                        for numeros in lista:
+                            maior_numero = 0
 
                         if numeros > maior_numero:
                             maior_numero = numeros
                         
                     print(f'O maior número multiplicado é: {maior_numero}')
                 
+
+
+                case '5':
+                    
+                    os.system('cls')
+
+                    for num in lista_numeros_usuario:
+
+                        if num == maior_numero:
+                            verificador = contador
+                        
+                        contador += 1
+
+                    contadores(1)
+
+                    for numero in lista_numeros_multiplicados[verificador]:
+
+                        soma += numero
+
+                    print(f'Soma da lsita com maior valor: {soma}')
+
+                
+
+                case '6':
+                    encerrar = True
+                    break
+    if encerrar:
+        print('Programa encerrado!')
+        break
+            
