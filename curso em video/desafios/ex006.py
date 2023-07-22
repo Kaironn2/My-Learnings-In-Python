@@ -134,3 +134,15 @@ while True:
                 case '3':
 
                     break
+                
+                case '4':
+
+                    for numeros in lista_numeros_multiplicados:
+
+                        maior_numero = 0
+
+                        if numeros > maior_numero:
+                            maior_numero = numeros
+                        
+                    print(f'O maior número multiplicado é: {maior_numero}')
+                
