@@ -36,7 +36,7 @@ multiplicar = lambda multiplicador: lambda numero: numero * multiplicador
 
 print(multiplicar(5)(2))
 
-# Função lambda com quantidad indefinida de parametros
+# Função lambda com quantidade indefinida de parametros
 
 somar = lambda *numeros: sum(numeros)
 
