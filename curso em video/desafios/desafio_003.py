@@ -31,12 +31,26 @@ while True:
 
     somar(numero1, numero2)
 
-    opcao = input('Você deseja realizar outra operação? [s]im [n]ão: ').upper().startswith('S')
+    
     
     while True:
+
+        opcao = input('Você deseja realizar outra operação? [s]im [n]ão: ').upper()
+
         if opcao == '':
-            continue
             os.system('cls')
-        else:
-            print('Programa finalizado.')
+            continue
+        elif opcao[0] in 'S':
+            os.system('cls')
+            encerrar = False
             break
+        elif opcao[0] in 'N':
+            encerrar = True
+            break
+        else:
+            os.system('cls')
+            print('Opção inválida. Por favor, digite SIM para continuar e NÃO para finalizar.')
+    
+    if encerrar:
+        print('Programa encerrado')
+        break
