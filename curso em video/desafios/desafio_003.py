@@ -5,16 +5,45 @@ def somar(numero1, numero2):
     os.system('cls')
     print(f'{numero1} + {numero2} = {soma}')
 
-while True:
+def digitar_numero(numero):
 
     while True:
         try:
             numero1 = int(input('Digite um número: '))
+            break
+        except ValueError:
+            os.system('cls')
+            print('Valor inválido. Por favor, digite apenas números.')
+
+    while True:
+        try:
             numero2 = int(input('Digite mais um número: '))
             break
         except ValueError:
             os.system('cls')
             print('Valor inválido. Por favor, digite apenas números.')
+            
+    return numero1, numero2
+
+while True:
+
+    numero1, numero2 = digitar_numero('x')
+
+    # while True:
+
+    #     try:
+    #         numero1 = int(input('Digite um número: '))
+    #         break
+    #     except ValueError:
+    #         os.system('cls')
+    #         print('Valor inválido. Por favor, digite apenas números.')
+
+    #     try:
+    #         numero2 = int(input('Digite mais um número: '))
+    #         break
+    #     except ValueError:
+    #         os.system('cls')
+    #         print('Valor inválido. Por favor, digite apenas números.')
 
     somar(numero1, numero2)
 
