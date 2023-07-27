@@ -27,30 +27,16 @@ def digitar_numero(numero):
 
 while True:
 
-    numero1, numero2 = digitar_numero('x')
-
-    # while True:
-
-    #     try:
-    #         numero1 = int(input('Digite um número: '))
-    #         break
-    #     except ValueError:
-    #         os.system('cls')
-    #         print('Valor inválido. Por favor, digite apenas números.')
-
-    #     try:
-    #         numero2 = int(input('Digite mais um número: '))
-    #         break
-    #     except ValueError:
-    #         os.system('cls')
-    #         print('Valor inválido. Por favor, digite apenas números.')
+    numero1, numero2 = digitar_numero('numero')
 
     somar(numero1, numero2)
 
     opcao = input('Você deseja realizar outra operação? [s]im [n]ão: ').upper().startswith('S')
-
-    if opcao:
-        os.system('cls')
-    else:
-        print('Programa finalizado.')
-        break
+    
+    while True:
+        if opcao == '':
+            continue
+            os.system('cls')
+        else:
+            print('Programa finalizado.')
+            break
