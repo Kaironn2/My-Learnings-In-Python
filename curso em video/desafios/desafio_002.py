@@ -1,6 +1,5 @@
-import os
+boas_vindas = lambda nome: print(f'Seja bem-vindo, {nome}!')
 
-nome_usuario = input('Digite seu nome: ')
-os.system('cls')
+nome = input('Digite seu nome: ')
 
-print(f'Seja bem-vindo, {nome_usuario}!')
+boas_vindas(nome)
