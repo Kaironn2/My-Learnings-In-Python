@@ -1,1 +1,3 @@
-print('Olá mundo')
+frase = lambda texto: print(texto)
+
+frase('Hello, world!')

@@ -2,6 +2,10 @@ import os
 lista_de_notas = []
 soma_das_notas = 0
 
+def media(soma_das_notas, quantidade_de_notas):
+    soma = soma_das_notas / quantidade_de_notas
+    return soma
+
 while True:
 
     while True:
@@ -37,8 +41,7 @@ while True:
             else:
                 print(notas_digitadas, end=' - ')
                 contador += 1
-            
-
+           
 
     os.system('cls')
 
@@ -48,14 +51,28 @@ while True:
         print(f'Nota {contador}: {nota}')
         contador += 1
 
-    media = soma_das_notas / quantidade_de_notas
+    media_aluno = media(soma_das_notas, quantidade_de_notas)
 
-    print(f'A média é {media}')
+    print(f'A média é {media_aluno}')
 
-    outra_media = input('\nVocê deseja calcular outra média? [s]im [n]ão: ').upper().startswith('S')
+    while True:
 
-    if outra_media is False:
+        opcao = input('Você deseja realizar outra operação? [s]im [n]ão: ').upper()
+
+        if opcao == '':
+            os.system('cls')
+            continue
+        elif opcao[0] in 'S':
+            os.system('cls')
+            encerrar = False
+            break
+        elif opcao[0] in 'N':
+            encerrar = True
+            break
+        else:
+            os.system('cls')
+            print('Opção inválida. Por favor, digite SIM para continuar e NÃO para finalizar.')
+    
+    if encerrar:
         print('Programa encerrado')
         break
-
-    os.system('cls')
