@@ -9,7 +9,8 @@ def definir_contador(x):
 
 moedas = {
             'Dólar Americano (USD$)': 1, 'Euro (EUR$)': 1.11, 'Iene (JPY$)': 0.0071, 'Libra Esterlina (GBP$)': 1.29, 'Franco Suiço (CHF$)': 1.16, 
-            'Dólar Canadense (CAD$)': 0.76, 'Dólar Australiano (AUD$)': 0.68, 'Yuan Chinês (CNY$)': 0.14, 'Coroa Sueca (SEK$)': 0.096, 'Real Brasileiro (R$)': 0.21
+            'Dólar Canadense (CAD$)': 0.76, 'Dólar Australiano (AUD$)': 0.68, 'Yuan Chinês (CNY$)': 0.14, 'Coroa Sueca (SEK$)': 0.096, 'Real Brasileiro (R$)': 0.21,
+            'Libra Egípcia (EGP$)': 0.032
         }
 
 
