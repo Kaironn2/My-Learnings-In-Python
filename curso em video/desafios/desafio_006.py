@@ -14,6 +14,7 @@ def multiplos(numero):
 
     global lista_mais_recente
     global numero_mais_recente
+    global lista_numeros_usuario
     
     dobro = numero * 2
     triplo = numero * 3
@@ -118,14 +119,14 @@ while True:
 
                     os.system('cls')
 
+                    contadores(1)
                     
                     for lista in lista_numeros_multiplicados:
-
-                        contadores
 
                         print(f'{numeral}° numero: {lista_numeros_usuario[contador]}\n'
                               f'Múltiplos {lista}\n')
 
+                        numeral += 1
                         contador += 1 
 
 
