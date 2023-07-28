@@ -57,7 +57,7 @@ while True:
 
     while True:
 
-        opcao = input('Você deseja realizar outra operação? [s]im [n]ão: ').upper()
+        opcao = input('Você deseja calcular outra média? [s]im [n]ão: ').upper()
 
         if opcao == '':
             os.system('cls')
