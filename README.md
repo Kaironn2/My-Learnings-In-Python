@@ -1,2 +1,2 @@
-# Python
- Cursos de python
+# Meus Cursos de Python
+ Aulas, exercícios, complementos
