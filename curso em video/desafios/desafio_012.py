@@ -1,35 +1,25 @@
 import os
 
-def desconto(valor_produto, porcentagem):
+def desconto_produto(valor_produto, porcentagem):
     valor_com_desconto = valor_produto - (valor_produto * (porcentagem / 100))
     return valor_com_desconto
 
-while True:
-
-    while True:
-
-        try:
-            valor_produto = float(input('Digite o valor do produto: R$'))
-            break
-        except ValueError:
-            os.system('cls')
-            print('Valor inválido. Por favor, digite apenas números. Para decimais, use o . no lugar da vírgula.')
-    
+def validar_float_value(mensagem):
     while True:
         try:
-            porcentagem_desconto = float(input('Informe qual a porcentagem de desconto que você quer dar no produto: '))
+            float_value = float(input(f'{mensagem}'))
             break
-        except ValueError:
+        except:
             os.system('cls')
-            print('Valor inválido. Por favor, digite apenas números. Para decimais, use o . no lugar da vírgula.')
-    
-    valor_com_desconto = desconto(valor_produto, porcentagem_desconto)
+            print('Valor inválido. Por favor, digite apenas números. No caso de decimais, use o . no lugar da vírgula.')
+    return float_value
 
-    print(f'O valor original do produto é {valor_produto:.2f} e com {porcentagem_desconto}% de desconto ficará R${valor_com_desconto:.2f}.')
+def validate_option(mensagem):
+    global encerrar
 
     while True:
 
-        opcao_user = input('Você deseja calcular outro desconto? [s]im [n]ão: ').upper()
+        opcao_user = input(f'{mensagem}').upper()
 
         if opcao_user == '':
             os.system('cls')
@@ -45,8 +35,21 @@ while True:
                 encerrar = True
             break
     
+
+
+while True:
+
+    valor_produto_user = validar_float_value('Digite o valor do produto: R$')
+
+    porcentagem_desconto = validar_float_value('Digite a porcentagem que você quer dar de desconto no produto: ')
+
+    produto_com_desconto = desconto_produto(valor_produto_user, porcentagem_desconto)
+
+    print(f'O valor original do produto é R${valor_produto_user:.2f} e com os {porcentagem_desconto}% ele fica por R${produto_com_desconto:.2f}.')
+
+    validate_option('Você deseja calcular o desconto de outro produto? [s]im [n]ão: ')
+
     if encerrar:
         print('Programa encerrado.')
         break
-
     os.system('cls')
