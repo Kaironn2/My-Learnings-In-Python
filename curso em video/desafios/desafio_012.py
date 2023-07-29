@@ -8,11 +8,10 @@ def validar_float_value(mensagem):
     while True:
         try:
             float_value = float(input(f'{mensagem}'))
-            break
+            return float_value
         except:
             os.system('cls')
             print('Valor inválido. Por favor, digite apenas números. No caso de decimais, use o . no lugar da vírgula.')
-    return float_value
 
 def validate_option(mensagem):
     global encerrar
