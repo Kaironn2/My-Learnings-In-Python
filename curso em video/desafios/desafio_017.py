@@ -48,6 +48,10 @@ def redefinir_acumulador(valor_acumulador):
     global acumulador
     acumulador = valor_acumulador
 
+def redefinir_lista():
+    global lista_opcoes
+    lista_opcoes = []
+
 def opcoes_inseridas():
         pular_linha = None
         for chave, valor in ca_co_hi.items():
@@ -79,7 +83,7 @@ def mostrar_menu():
         elif len(opcao) > 1:
             os.system('cls')
             print('Digite apenas uma opção.')
-        elif opcao in '123':
+        elif opcao in '1234':
             if opcao not in lista_opcoes:
                 lista_opcoes.append(opcao)
                 return opcao[0]
@@ -94,6 +98,7 @@ def mostrar_menu():
 while True:
 
     redefinir_lados()
+    redefinir_lista()
 
     while True:
 
@@ -109,6 +114,8 @@ while True:
                 ca_co_hi['Cateto Adjacente'] = validar_float('Insira o valor do cateto adjacente: ')
             case '3':
                 ca_co_hi['Hipotenusa'] = validar_float('Insira o valor do hipotenusa: ')
+            case '4':
+                break
 
         for chave, valor in ca_co_hi.items():
             if valor > 0:
@@ -136,10 +143,14 @@ while True:
         cateto_oposto = sqrt((hipotenusa ** 2) - (cateto_adjacente ** 2))
         ca_co_hi['Cateto Oposto'] = cateto_oposto
 
-    for chave, valor in ca_co_hi.items():
-        print(f'{chave}: {valor:.2f}')
+    if opcao != '4':
+        for chave, valor in ca_co_hi.items():
+            print(f'{chave}: {valor:.2f}')
 
-    validate_option('Você deseja calcular outro triângulo retângulo? [s]im [n]ão: ')
+    if opcao != '4':
+        validate_option('Você deseja calcular outro triângulo retângulo? [s]im [n]ão: ')
+    else:
+        encerrar = True
 
     if encerrar:
         print('Programa encerrado.')
