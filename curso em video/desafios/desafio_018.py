@@ -24,17 +24,17 @@ def validate_option(mensagem):
 
 def calc_seno(angulo):
     global seno
-    seno = math.sin(angulo)
+    seno = math.sin(math.radians(angulo))
     return seno
 
 def calc_coseno(angulo):
     global coseno
-    coseno = math.cos(angulo)
+    coseno = math.cos(math.radians(angulo))
     return coseno
 
 def calc_tangente(angulo):
     global tangente
-    tangente = math.tan(angulo)
+    tangente = math.tan(math.radians(angulo))
     return tangente
 
 def validar_int(mensagem):
@@ -54,11 +54,13 @@ while True:
     calc_coseno(angulo)
     calc_tangente(angulo)
 
+    os.system('cls')
+
     print(
         f'Ângulo: {angulo}°\n'
-        f'Seno: {seno}\n'
-        f'Coseno: {coseno}\n'
-        f'Tangente: {tangente}°\n'
+        f'Seno: {seno:.2f}\n'
+        f'Coseno: {coseno:.2f}\n'
+        f'Tangente: {tangente:.2f}\n'
     )
 
     validate_option('Você deseja ver informações trigonométricas de outro ângulo? [s]im [n]ão: ')
