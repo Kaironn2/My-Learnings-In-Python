@@ -1,8 +1,31 @@
 import os 
+from math import sqrt
 
 ca_co_hi = {'Cateto Oposto': 0, 'Cateto Adjacente': 0, 'Hipotenusa': 0}
 contador = 0
+acumulador = 0
 lista_opcoes = []
+
+def validate_option(mensagem):
+    global encerrar
+
+    while True:
+
+        opcao_user = input(f'{mensagem}').upper()
+
+        if opcao_user == '':
+            os.system('cls')
+            continue
+        elif opcao_user[0] not in 'SN':
+            os.system('cls')
+            print('Opção inválida. Por favor, digite SIM para continuar e NÃO para finalizar.')
+            continue
+        else:
+            if opcao_user == 'S':
+                encerrar = False
+            else:
+                encerrar = True
+            break
 
 def validar_float(mensagem):
     while True:
@@ -20,6 +43,10 @@ def redefinir_lados():
 def redefinir_contador(valor_contador):
     global contador
     contador = valor_contador
+
+def redefinir_acumulador(valor_acumulador):
+    global acumulador
+    acumulador = valor_acumulador
 
 def opcoes_inseridas():
         pular_linha = None
@@ -83,4 +110,39 @@ while True:
             case '3':
                 ca_co_hi['Hipotenusa'] = validar_float('Insira o valor do hipotenusa: ')
 
+        for chave, valor in ca_co_hi.items():
+            if valor > 0:
+                acumulador += 1
+        
+        if acumulador == 2:
+            break
+        
+        redefinir_acumulador(0)
         os.system('cls')
+
+    cateto_oposto = ca_co_hi['Cateto Oposto']
+    cateto_adjacente = ca_co_hi['Cateto Adjacente']
+    hipotenusa = ca_co_hi['Hipotenusa']
+
+    if cateto_oposto > 0 and cateto_adjacente > 0:
+        hipotenusa = sqrt((cateto_oposto ** 2) + (cateto_adjacente ** 2))
+        ca_co_hi['Hipotenusa'] = hipotenusa
+    
+    elif cateto_oposto > 0 and hipotenusa > 0:
+        cateto_adjacente = sqrt((hipotenusa ** 2) - (cateto_oposto ** 2))
+        ca_co_hi['Cateto Adjacente'] = cateto_adjacente
+    
+    elif cateto_adjacente > 0 and hipotenusa > 0:
+        cateto_oposto = sqrt((hipotenusa ** 2) - (cateto_adjacente ** 2))
+        ca_co_hi['Cateto Oposto'] = cateto_oposto
+
+    for chave, valor in ca_co_hi.items():
+        print(f'{chave}: {valor:.2f}')
+
+    validate_option('Você deseja calcular outro triângulo retângulo? [s]im [n]ão: ')
+
+    if encerrar:
+        print('Programa encerrado.')
+        break
+
+    os.system('cls')
