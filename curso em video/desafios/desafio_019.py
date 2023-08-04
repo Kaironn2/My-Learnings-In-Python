@@ -17,6 +17,13 @@ def sortear():
         # print(f'Ganhador do sorteio: {nome_sorteado}')
         ultimo_ganhador = nome_sorteado
 
+def limpar_lista():
+    global lista_nomes
+    if len(lista_nomes) == 0:
+        print('Nada para limpar aqui. ')
+    else:
+        lista_nomes = []
+
 def ver_lista():
     global lista_nomes
     
@@ -78,7 +85,7 @@ def menu_opcoes():
         elif opcao_user[0] == '1':
             sortear()
         elif opcao_user[0] == '2':
-            lista_nomes = []
+            limpar_lista()
         elif opcao_user[0] == '3':
             adicionar_nome_na_lista()
         elif opcao_user[0] == '4':
