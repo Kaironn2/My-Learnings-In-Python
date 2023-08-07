@@ -4,10 +4,13 @@ import os
 lista = []
 
 def shuffle_list(lista):
-    shuffled_list = shuffle(lista)
-    print('A lista foi embaralhada!')
-    ver_lista()
-    return shuffled_list
+    if len(lista) == 0:
+        print('Nada para embaralhar. Primeiro adicione nomes à lista.')
+    else:
+        shuffled_list = shuffle(lista)
+        print('A lista foi embaralhada!')
+        ver_lista()
+        return shuffled_list
 
 def opcao_sn(msg):
     while True:
@@ -77,8 +80,11 @@ def apagar_nome():
 
 def limpar_lista():
     global lista
-    lista = []
-    print('A lista inteira foi apagada!')
+    if len(lista) == 0:
+        print('Nada pagar apagar. Primeiro adicione nomes à lista.')
+    else:
+        lista = []
+        print('A lista inteira foi apagada!')
 
 def ver_lista():
     global lista
