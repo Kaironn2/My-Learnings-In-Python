@@ -9,29 +9,14 @@ produtos = [
 ]
 
 
-lista_original = [
-    {'produto': produto['nome'], 'preco': produto['preco']} for produto in produtos
-    ]
+lista_original = [{'produto': produto['nome'], 'preco': produto['preco']} for produto in produtos]
 
+produtos_com_aumento = [{'produto': produto['nome'], 'preco': produto['preco'] * 1.10} for produto in produtos]
 
-
-produtos_com_aumento = [
-    {'produto': produto['nome'], 'preco': produto['preco'] * 1.10} 
-    for produto in produtos
-]
-
-
-
-produtos_ordem_descrecente = [
-    {'produto': produto['nome'], 'preco': produto['preco']} for produto in produtos
-    ]
+produtos_ordem_descrecente = [{'produto': produto['nome'], 'preco': produto['preco']} for produto in produtos]
 produtos_ordem_descrecente.sort(key=lambda item: item['produto'], reverse=True)
 
-
-
-produtos_preco_crescente = [
-    {'produto': produto['nome'], 'preco': produto['preco']} for produto in produtos
-    ]
+produtos_preco_crescente = [{'produto': produto['nome'], 'preco': produto['preco']} for produto in produtos]
 produtos_preco_crescente.sort(key=lambda item: item['preco'])
 
 
