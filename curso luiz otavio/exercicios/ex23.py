@@ -11,40 +11,40 @@
 
 from copy import deepcopy
 
-lista_cidades = ['Salvador', 'Ubatuba', 'Belo Horizonte', 'Rio de Janeiro', 'Pernambuco']
-lista_siglas = ['BA', 'SP', 'MG', 'RJ']
-menor_lista = []
-maior_lista = []
-lista_combinada = []
-contador = 0
+list_city = ['Salvador', 'Ubatuba', 'Belo Horizonte', 'Rio de Janeiro', 'Pernambuco']
+list_acronym = ['BA', 'SP', 'MG', 'RJ']
+short_list = []
+large_list = []
+combined_list = []
+count = 0
 
-def verify_small_list(lista1, lista2):
-    global menor_lista, maior_lista
-    if len(lista1) > len(lista2):
-        menor_lista = deepcopy(lista2)
-        maior_lista = deepcopy(lista1)
+def verify_short_list(list1, list2):
+    global short_list, large_list
+    if len(list1) > len(list2):
+        short_list = deepcopy(list2)
+        large_list = deepcopy(list1)
     else:
-        menor_lista = deepcopy(lista1)
-        maior_lista = deepcopy(lista2)
+        short_list = deepcopy(list1)
+        large_list = deepcopy(list2)
 
-verify_small_list(lista_cidades, lista_siglas)
+verify_short_list(list_city, list_acronym)
 
-if len(menor_lista[0]) == 2:
-    for cidade, sigla in zip(maior_lista, menor_lista):
-        lista_atual = [cidade, sigla]
-        lista_combinada.append(lista_atual)
-        contador += 1
-        if contador == len(menor_lista):
+if len(short_list[0]) == 2:
+    for city, acronym in zip(large_list, short_list):
+        current_list = [city, acronym]
+        combined_list.append(current_list)
+        count += 1
+        if count == len(short_list):
             break
 
 else:
-    for cidade, sigla in zip(menor_lista, maior_lista):
-        lista_atual = [cidade, sigla]
-        lista_combinada.append(lista_atual)
-        contador += 1
-        if contador == len(menor_lista):
+    for city, acronym in zip(short_list, large_list):
+        current_list = [city, acronym]
+        combined_list.append(current_list)
+        count += 1
+        if count == len(short_list):
             break
 
 
-for cidade, sigla in lista_combinada:
-    print(f'{cidade}, {sigla}')
+for city, acronym in combined_list:
+    print(f'{city}, {acronym}')
