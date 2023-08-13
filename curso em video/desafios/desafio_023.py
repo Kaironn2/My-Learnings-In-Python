@@ -1,5 +1,3 @@
-import os
-
 def number_analy(number):
     verify_isnumber = number.isdigit()
 
