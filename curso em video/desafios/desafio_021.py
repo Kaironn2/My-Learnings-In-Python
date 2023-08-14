@@ -1,16 +1,39 @@
-import pygame
 import os
-import time
 
-def playmp3(mp3file):
-    print(f'Reproduzindo {mp3file}')
-    pygame.mixer.init()                 # inicia o mixer
-    pygame.mixer.music.load(mp3file)    # carregar o arquivo mp3 no mixer
-    pygame.mixer_music.play()           # toca o arquivo carregado
-    time.sleep(6)                       # tempo do audio 
-    print('O audio acabou!')
-    os.system('exit')
+import pygame
 
-os.system('cls')
+pygame.init()
+pygame.mixer.init()
 
-playmp3('desafio_021.mp3')              # Nome do arquivo mp3
+
+def play_mp3(mp3_path):
+    pygame.mixer.music.load(mp3_path)
+    pygame.mixer.music.play()
+
+
+def main():
+    while True:
+        os.system('cls')
+        mp3_path = input(
+            'Digite o caminho do arquivo MP3 que deseja reproduzir (ou "sair" para finalizar).'
+            '\nTambém coloque a extensão .mp3. Ex: desafio_021.mp3: ')
+
+        if mp3_path.lower() == 'sair':
+            break
+
+        play_mp3(mp3_path)
+
+        while pygame.mixer.music.get_busy():
+            pass  # Aguarda a reprodução do arquivo terminar
+
+        option = input("Deseja reproduzir novamente? (s/n): ")
+        if option.lower() != 's':
+            print('Programa encerrado.')
+            break
+
+    pygame.mixer.music.stop()
+    pygame.quit()
+
+
+if __name__ == "__main__":
+    main()
