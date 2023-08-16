@@ -85,11 +85,15 @@ while True:
         print('Sua lista foi exportada com sucesso!')
 
     elif option == 'import':
-        with open(file_path, 'r') as file_json:  # caminho do arquivo, modo de abertura
-            # Faz a leitura do arquivo Json em string para não ocorrer um erro de leitura
-            content = file_json.read()
-            # Depois pegamos a lista já em STR e guardamos na variável
-            current_list = json.loads(content)
+        try:
+            with open(file_path, 'r') as file_json:  # caminho do arquivo, modo de abertura
+                # Faz a leitura do arquivo Json em string para não ocorrer um erro de leitura
+                content = file_json.read()
+                # Depois pegamos a lista já em STR e guardamos na variável
+                current_list = json.loads(content)
+        except FileNotFoundError:
+            print(
+                'Lista de Tarefas.json não encontrada. Por favor, crie uma lista primeiro.')
 
     elif option == '':
         continue
