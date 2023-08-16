@@ -69,5 +69,7 @@ while True:
     elif option == 'exit':
         print('Programa encerrado.')
         break
+    elif option == '':
+        continue
     else:
         add()
