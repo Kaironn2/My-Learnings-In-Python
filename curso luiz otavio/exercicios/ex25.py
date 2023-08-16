@@ -25,6 +25,20 @@ def redo():
         print('Não há nada para refazer.')
 
 
+def clear():
+    global counter, current_list, redo_list
+    current_list = []
+    redo_list
+    counter = 0
+
+
+def add():
+    global counter, redo_list, current_list
+    current_list.append(option)
+    counter = 0
+    redo_list = []
+
+
 while True:
 
     if len(current_list) > 0:
@@ -38,7 +52,9 @@ while True:
         'Comandos: \n'
         'Para refazer a última ação: refazer\n'
         'Para desfazer a última ação: desfazer\n'
-        'Para adicionar algo na lista, apenas digite o que você deseja adicionar.\n\n'
+        'Para limpar os itens da lista: limpar\n'
+        'Para adicionar algo na lista, apenas digite o que você deseja adicionar.\n'
+        'Para encerrar o programa: exit\n\n'
     )
     option = input('Digite um dos comandos: ')
 
@@ -49,11 +65,9 @@ while True:
     elif option == 'desfazer':
         undo()
     elif option == 'limpar':
-        current_list = []
+        clear()
     elif option == 'exit':
         print('Programa encerrado.')
         break
     else:
-        current_list.append(option)
-        counter = 0
-        redo_list = []
+        add()
