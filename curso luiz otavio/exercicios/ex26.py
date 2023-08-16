@@ -5,8 +5,8 @@ current_list = []
 redo_list = []
 counter = 0
 file_name = 'Lista de Tarefas'
-# Pega o caminho atual do arquivo
-file_path = os.path.join(os.path.dirname(__file__), file_name)
+# os.path.join(os.path.dirname(__file__), file_name) # Pega o caminho atual do arquivo
+file_path = 'C:\\Users\\jonat\\OneDrive\\Área de Trabalho\\Py\\Python\\Outros Arquivos\\' + file_name
 
 
 def undo():
@@ -81,7 +81,7 @@ while True:
 
     elif option == 'export':
         with open(file_path, 'w') as file_json:
-            json.dump(current_list, file_json, indent=2)
+            json.dump(current_list, file_json, indent=2, ensure_ascii=False)
         print('Sua lista foi exportada com sucesso!')
 
     elif option == 'import':
