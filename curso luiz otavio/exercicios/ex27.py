@@ -19,7 +19,6 @@ class User():
 user1 = User('Jonathas', 25)
 user1.__dict__['name'] = user1.name
 user1.__dict__['age'] = user1.age
-user1.__dict__['birth_year'] = user1.get_birth_year()
 
 user1_dados = vars(user1)
 
