@@ -1,0 +1,12 @@
+Error: Não logou LogFileMixin
+Sucess: logado! LogFileMixin
+Sucess: Galaxy está ligado (SmartPhone)
+Error: iPhone não está ligado (SmartPhone)
+Sucess: Galaxy está ligado (SmartPhone)
+Error: iPhone não está ligado (SmartPhone)
+Sucess: Galaxy está ligado (SmartPhone)
+Error: iPhone não está ligado (SmartPhone)
+Sucess: Galaxy está ligado (SmartPhone)
+Error: iPhone não está ligado (SmartPhone)
+Sucess: Galaxy está ligado (SmartPhone)
+Error: iPhone não está ligado (SmartPhone)
