@@ -1,0 +1,17 @@
+{
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8",
+    "editor.formatOnSave": true,
+    "editor.rulers": [80]
+  },
+  "files.autoSave": "afterDelay",
+  "editor.formatOnSave": true,
+  "workbench.colorTheme": "Dracula",
+  "explorer.compactFolders": false,
+  "code-runner.executorMap": {
+    "python": "clear ; python -u"
+  },
+  "code-runner.runInTerminal": true,
+  "code-runner.ignoreSelection": true,
+  "code-runner.clearPreviousOutput": true,
+}
